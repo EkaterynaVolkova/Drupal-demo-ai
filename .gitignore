@@ -1,0 +1,37 @@
+# Composer
+/vendor/
+
+# Drupal
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+/web/autoload.php
+/web/index.php
+/web/update.php
+/web/robots.txt
+/web/.csslintrc
+/web/.eslintignore
+/web/.eslintrc.json
+/web/.ht.router.php
+/web/example.gitignore
+/web/INSTALL.txt
+/web/README.md
+/web/web.config
+
+# Local settings and secrets
+/web/sites/*/settings.php
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+/web/sites/*/files/
+/web/sites/simpletest/
+/private/
+
+# Tooling / IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+*.sql
+*.sql.gz
