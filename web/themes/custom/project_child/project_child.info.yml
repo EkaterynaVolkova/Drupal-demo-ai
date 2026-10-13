@@ -1,0 +1,8 @@
+name: Project Child
+type: theme
+description: 'Child theme of Project Base (Starterkit). Put all project-specific styling and templates here.'
+package: Custom
+core_version_requirement: ^11
+base theme: project_base
+libraries:
+  - project_child/global
