@@ -1,0 +1,14 @@
+name: Olivero Child
+type: theme
+description: 'Reusable child theme of Olivero (Drupal core). Copy the folder, rename the machine name and start overriding.'
+package: Custom
+core_version_requirement: ^11
+base theme: olivero
+libraries:
+  - olivero_child/global
+# Extend (not replace) Olivero libraries with project CSS/JS.
+libraries-extend:
+  olivero/global-styling:
+    - olivero_child/global
+# Regions are inherited from Olivero. To override, copy the regions list from
+# core/themes/olivero/olivero.info.yml and edit it here.

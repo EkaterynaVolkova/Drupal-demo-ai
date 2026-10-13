@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks for the Olivero Child theme.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function olivero_child_preprocess_html(array &$variables): void {
+  // Example: add a class to <body> for per-project styling hooks.
+  $variables['attributes']['class'][] = 'olivero-child';
+}
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function olivero_child_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state): void {
+  // Add custom theme settings here (see theme-settings docs on drupal.org).
+}
