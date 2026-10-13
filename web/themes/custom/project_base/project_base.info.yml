@@ -1,0 +1,26 @@
+name: 'Project Base'
+type: theme
+'base theme': false
+version: 1.0.0
+libraries:
+  - project_base/base
+  - project_base/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - project_base/user
+  core/drupal.dropbutton:
+    - project_base/dropbutton
+  core/drupal.dialog:
+    - project_base/dialog
+  file/drupal.file:
+    - project_base/file
+  core/drupal.item-list:
+    - project_base/item-list
+  core/drupal.progress:
+    - project_base/progress
+  core/drupal.tablesort:
+    - project_base/drupal.tablesort
+description: 'Standalone base theme generated from core Starterkit.'
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.4.9'
