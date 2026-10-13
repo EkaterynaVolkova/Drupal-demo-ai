@@ -35,3 +35,23 @@
 .DS_Store
 *.sql
 *.sql.gz
+
+# AI assistant files (CLAUDE.md and AGENTS.md are intentionally tracked)
+.claude/
+.cursor/
+.cursorrules
+.cursorignore
+.windsurf/
+.windsurfrules
+.aider*
+.continue/
+.codex/
+.gemini/
+GEMINI.md
+.github/copilot-instructions.md
+.clinerules
+.roo/
+.roomodes
+.kilocode/
+.codeium/
+.superpowers/
