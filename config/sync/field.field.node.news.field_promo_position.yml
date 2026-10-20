@@ -1,0 +1,21 @@
+uuid: cda2dccc-b20e-445a-bb36-be3507f639a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promo_position
+    - node.type.news
+  module:
+    - options
+id: node.news.field_promo_position
+field_name: field_promo_position
+entity_type: node
+bundle: news
+label: 'Позиция анонса'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

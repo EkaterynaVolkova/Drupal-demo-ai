@@ -1,0 +1,21 @@
+uuid: edfca695-75ec-4729-a967-13ff4f1f92b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promo
+    - node.type.news
+id: node.news.field_promo
+field_name: field_promo
+entity_type: node
+bundle: news
+label: 'В анонсах на главной'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: a400fa58-3443-4404-af6c-abe73572af60
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - project_base
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: project_base_powered
+theme: project_base
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

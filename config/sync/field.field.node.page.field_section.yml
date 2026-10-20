@@ -1,0 +1,24 @@
+uuid: 4a0ae845-6bb1-42d4-9ba9-1ce88ba1fb35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section
+    - node.type.page
+    - taxonomy.vocabulary.sections
+id: node.page.field_section
+field_name: field_section
+entity_type: node
+bundle: page
+label: Раздел
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sections: sections
+field_type: entity_reference

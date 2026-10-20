@@ -1,0 +1,22 @@
+uuid: 691f2b84-b812-4e8c-85b6-59d916c04a02
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - project_base
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: project_base_help
+theme: project_base
+region: sidebar_first
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

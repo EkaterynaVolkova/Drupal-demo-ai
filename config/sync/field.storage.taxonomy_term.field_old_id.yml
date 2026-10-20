@@ -1,0 +1,20 @@
+uuid: 6070b57a-0188-478b-8470-2e1f87d7e219
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_old_id
+field_name: field_old_id
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

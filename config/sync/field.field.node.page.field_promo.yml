@@ -1,0 +1,21 @@
+uuid: c666a345-6728-4c33-819e-5e21099331c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promo
+    - node.type.page
+id: node.page.field_promo
+field_name: field_promo
+entity_type: node
+bundle: page
+label: 'В анонсах на главной'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

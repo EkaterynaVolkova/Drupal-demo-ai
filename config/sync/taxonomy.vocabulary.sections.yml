@@ -1,0 +1,9 @@
+uuid: 8f852fe5-da8b-439c-9cfe-e177a6f47c32
+langcode: ru
+status: true
+dependencies: {  }
+name: Разделы
+vid: sections
+description: 'Иерархия папок старого сайта'
+weight: 0
+new_revision: false

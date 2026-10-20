@@ -1,0 +1,19 @@
+uuid: 1c1c95fe-c49d-4258-9046-6917215c9898
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_teaser
+field_name: field_teaser
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: b38cd286-ccaa-457b-b0e1-219d74d7b15b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sort_order
+    - node.type.news
+id: node.news.field_sort_order
+field_name: field_sort_order
+entity_type: node
+bundle: news
+label: 'Порядок в разделе'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

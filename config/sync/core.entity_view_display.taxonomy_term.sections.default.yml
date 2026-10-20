@@ -1,0 +1,27 @@
+uuid: b78dceda-8907-454f-9179-587a257941d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sections.field_image
+    - field.field.taxonomy_term.sections.field_old_id
+    - field.field.taxonomy_term.sections.field_teaser
+    - taxonomy.vocabulary.sections
+  module:
+    - text
+id: taxonomy_term.sections.default
+targetEntityType: taxonomy_term
+bundle: sections
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_image: true
+  field_old_id: true
+  field_teaser: true

@@ -1,0 +1,10 @@
+uuid: 6c5ae0c5-99ec-4f01-85de-f7177a238fc4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: 'Нижнее меню'
+description: 'Site information links'
+locked: true

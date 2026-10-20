@@ -1,0 +1,11 @@
+uuid: b3497b9a-ad0a-406d-ab21-68ce81f228b6
+langcode: en
+status: true
+dependencies: {  }
+name: Новость
+type: news
+description: null
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: false

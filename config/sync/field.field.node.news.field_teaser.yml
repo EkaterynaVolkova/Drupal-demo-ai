@@ -1,0 +1,22 @@
+uuid: 09f59dc2-3f9f-41ea-96ea-2431fdc7315d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.news
+  module:
+    - text
+id: node.news.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: news
+label: Анонс
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long
