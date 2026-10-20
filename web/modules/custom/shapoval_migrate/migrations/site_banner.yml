@@ -1,0 +1,36 @@
+id: site_banner
+label: 'Block: banner'
+migration_tags: [shapoval]
+source:
+  plugin: shapoval_table
+  key: migrate
+  table: banners
+  id: id
+  constants:
+    open: '<img src="'
+    close: '" alt="">'
+destination:
+  plugin: 'entity:block_content'
+  default_bundle: basic
+process:
+  type:
+    plugin: default_value
+    default_value: basic
+  info:
+    plugin: default_value
+    default_value: 'Баннер'
+  '@html':
+    plugin: concat
+    source:
+      - constants/open
+      - icon
+      - constants/close
+  body/value:
+    plugin: shapoval_body
+    source: '@html'
+  body/format:
+    plugin: default_value
+    default_value: full_html
+migration_dependencies:
+  required:
+    - media_files

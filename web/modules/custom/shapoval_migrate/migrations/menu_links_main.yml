@@ -1,0 +1,29 @@
+id: menu_links_main
+label: 'Menu: main'
+migration_tags: [shapoval]
+source:
+  plugin: shapoval_structure
+  key: migrate
+  kind: menu_main
+destination:
+  plugin: 'entity:menu_link_content'
+  default_bundle: menu_link_content
+process:
+  title: Head
+  menu_name:
+    plugin: default_value
+    default_value: main
+  link/uri: link_uri
+  link/options: link_options
+  weight: SortOrder
+  enabled:
+    plugin: default_value
+    default_value: 1
+  parent:
+    plugin: shapoval_menu_parent
+    source: menu_parent_id
+    migration: menu_links_main
+migration_dependencies:
+  required:
+    - nodes_page
+    - nodes_news

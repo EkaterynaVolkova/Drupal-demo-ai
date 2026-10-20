@@ -1,0 +1,59 @@
+id: nodes_page
+label: 'Nodes: page'
+migration_tags: [shapoval]
+source:
+  plugin: shapoval_structure
+  key: migrate
+  kind: pages
+destination:
+  plugin: 'entity:node'
+  default_bundle: page
+process:
+  type:
+    plugin: default_value
+    default_value: page
+  title: Head
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created_ts
+  changed: created_ts
+  body/value:
+    plugin: shapoval_body
+    source: Text
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  field_teaser/value:
+    plugin: shapoval_body
+    source: Descr
+  field_teaser/format:
+    plugin: default_value
+    default_value: full_html
+  field_section:
+    plugin: migration_lookup
+    migration: sections_terms
+    source: ParentID
+    no_stub: true
+  field_image:
+    plugin: shapoval_media
+    source: Icon
+  field_announce_image:
+    plugin: shapoval_media
+    source: anonceicon
+  field_external_link/uri: ext_uri
+  field_promo: promo
+  field_promo_position: promo_position
+  field_sort_order: SortOrder
+  field_old_id: ID
+  path/alias: alias
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+migration_dependencies:
+  required:
+    - media_files
+    - sections_terms

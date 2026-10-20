@@ -1,0 +1,4 @@
+services:
+  shapoval_migrate.body_processor:
+    class: Drupal\shapoval_migrate\BodyProcessor
+    arguments: ['@database', '@entity_type.manager', '%app.root%']

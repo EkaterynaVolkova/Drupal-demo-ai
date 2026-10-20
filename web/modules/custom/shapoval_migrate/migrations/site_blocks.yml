@@ -1,0 +1,31 @@
+id: site_blocks
+label: 'Block: contacts / footer text'
+migration_tags: [shapoval]
+source:
+  plugin: shapoval_table
+  key: migrate
+  table: settings
+  id: ID
+  where:
+    LangID: 1
+destination:
+  plugin: 'entity:block_content'
+  default_bundle: basic
+process:
+  type:
+    plugin: default_value
+    default_value: basic
+  info:
+    plugin: default_value
+    default_value: 'Контакты'
+  '@raw':
+    plugin: concat
+    source:
+      - text
+      - disclamer
+  body/value:
+    plugin: shapoval_body
+    source: '@raw'
+  body/format:
+    plugin: default_value
+    default_value: full_html

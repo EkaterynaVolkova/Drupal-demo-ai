@@ -1,0 +1,30 @@
+id: site_settings
+label: 'Site settings (system.site)'
+migration_tags: [shapoval]
+source:
+  plugin: shapoval_table
+  key: migrate
+  table: settings
+  id: ID
+  where:
+    LangID: 1
+  constants:
+    main_id: 199
+destination:
+  plugin: config
+  config_name: system.site
+process:
+  name: Sitename
+  slogan: Slogan
+  mail: email
+  page.front:
+    -
+      plugin: migration_lookup
+      migration: nodes_page
+      source: constants/main_id
+      no_stub: true
+    -
+      plugin: shapoval_node_path
+migration_dependencies:
+  required:
+    - nodes_page

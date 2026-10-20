@@ -1,0 +1,16 @@
+name: Shapoval migrate
+type: module
+description: 'Migrates shapovalov.md (custom CMS, MySQL dump shapoval_main) into Drupal: sections, nodes, media, menus, site settings.'
+package: Custom
+core_version_requirement: ^11
+dependencies:
+  - drupal:block_content
+  - drupal:media
+  - drupal:menu_link_content
+  - drupal:migrate
+  - drupal:node
+  - drupal:path
+  - drupal:taxonomy
+  - metatag:metatag
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
