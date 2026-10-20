@@ -41,6 +41,7 @@ module:
   path_alias: 0
   phpass: 0
   redirect: 0
+  shapoval_migrate: 0
   simple_sitemap: 0
   system: 0
   taxonomy: 0
