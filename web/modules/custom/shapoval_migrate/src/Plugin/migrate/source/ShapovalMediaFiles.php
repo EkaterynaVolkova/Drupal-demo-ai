@@ -15,18 +15,30 @@ class ShapovalMediaFiles extends SourcePluginBase {
 
   const IMAGE_EXT = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp'];
 
+  /**
+   * {@inheritdoc}
+   */
   public function __toString() {
     return 'shapoval_media_files';
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function fields() {
     return ['path' => 'Path relative to uploads/', 'name' => 'File name', 'bundle' => 'Media bundle'];
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getIds() {
     return ['path' => ['type' => 'string']];
   }
 
+  /**
+   * {@inheritdoc}
+   */
   protected function initializeIterator() {
     $db = Database::getConnection('default', 'migrate');
     $root = \Drupal::root();

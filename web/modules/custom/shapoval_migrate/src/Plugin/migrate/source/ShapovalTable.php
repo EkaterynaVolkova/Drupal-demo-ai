@@ -13,6 +13,9 @@ use Drupal\migrate\Plugin\migrate\source\SqlBase;
 #[MigrateSource('shapoval_table')]
 class ShapovalTable extends SqlBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public function query() {
     $query = $this->select($this->configuration['table'], 't')->fields('t');
     foreach ($this->configuration['where'] ?? [] as $column => $value) {
@@ -21,6 +24,9 @@ class ShapovalTable extends SqlBase {
     return $query;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function fields() {
     $fields = [];
     foreach ($this->getDatabase()->query('DESCRIBE ' . $this->configuration['table'])->fetchAll() as $c) {
@@ -29,6 +35,9 @@ class ShapovalTable extends SqlBase {
     return $fields;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function getIds() {
     return [$this->configuration['id'] => ['type' => 'integer', 'alias' => 't']];
   }

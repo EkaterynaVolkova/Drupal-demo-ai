@@ -20,10 +20,16 @@ class ShapovalBody extends ProcessPluginBase implements ContainerFactoryPluginIn
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static($configuration, $plugin_id, $plugin_definition, $container->get('shapoval_migrate.body_processor'));
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     return $this->processor->process((string) $value);
   }

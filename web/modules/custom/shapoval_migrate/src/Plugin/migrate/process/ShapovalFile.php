@@ -17,6 +17,9 @@ use Drupal\migrate\Row;
 #[MigrateProcess('shapoval_file')]
 class ShapovalFile extends ProcessPluginBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     if (isset($this->configuration['only']) && $row->getSourceProperty('bundle') !== $this->configuration['only']) {
       return NULL;

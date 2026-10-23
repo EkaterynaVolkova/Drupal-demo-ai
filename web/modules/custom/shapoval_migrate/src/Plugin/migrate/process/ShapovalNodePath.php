@@ -13,6 +13,9 @@ use Drupal\migrate\Row;
 #[MigrateProcess('shapoval_node_path')]
 class ShapovalNodePath extends ProcessPluginBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property) {
     return '/node/' . (is_array($value) ? reset($value) : $value);
   }

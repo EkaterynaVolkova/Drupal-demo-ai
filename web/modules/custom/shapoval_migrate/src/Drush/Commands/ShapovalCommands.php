@@ -7,7 +7,6 @@ use Drupal\shapoval_migrate\BodyProcessor;
 use Drush\Attributes as CLI;
 use Drush\Commands\DrushCommands;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Pool;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
@@ -95,6 +94,9 @@ class ShapovalCommands extends DrushCommands {
     $this->logger()->success('Saved to ' . self::REPORT_FILE);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   protected function count(string $type, string $bundle): int {
     return (int) \Drupal::entityTypeManager()->getStorage($type)->getQuery()->accessCheck(FALSE)->condition('bundle', $bundle)->count()->execute();
   }
@@ -179,6 +181,31 @@ class ShapovalCommands extends DrushCommands {
       $this->output()->writeln($f);
     }
     file_put_contents(\Drupal::service('file_system')->realpath('public://shapoval-url-check.txt'), implode("\n", $failed) . "\n");
+  }
+
+  /**
+   * Pre-generates image style derivatives of all migrated images.
+   *
+   * Derivatives are created on demand when a page is first viewed, so this is
+   * optional: it only avoids a slow first view and makes the site independent
+   * of the web server being able to write to files/styles on a request.
+   */
+  #[CLI\Command(name: 'shapoval:derivatives', aliases: ['shder'])]
+  #[CLI\Option(name: 'styles', description: 'Comma-separated image style IDs.')]
+  #[CLI\Usage(name: 'drush shapoval:derivatives', description: 'Create shapoval_content, shapoval_icon and shapoval_card derivatives.')]
+  public function derivatives(array $options = ['styles' => 'shapoval_content,shapoval_icon,shapoval_card']): void {
+    $styles = \Drupal::entityTypeManager()->getStorage('image_style')->loadMultiple(array_filter(array_map('trim', explode(',', $options['styles']))));
+    $ids = \Drupal::entityQuery('file')->accessCheck(FALSE)->condition('filemime', 'image/%', 'LIKE')->execute();
+    $created = 0;
+    foreach (\Drupal::entityTypeManager()->getStorage('file')->loadMultiple($ids) as $file) {
+      foreach ($styles as $style) {
+        $dest = $style->buildUri($file->getFileUri());
+        if (!file_exists($dest) && is_file($file->getFileUri()) && $style->createDerivative($file->getFileUri(), $dest)) {
+          $created++;
+        }
+      }
+    }
+    $this->output()->writeln(sprintf('Created %d derivatives for %d images.', $created, count($ids)));
   }
 
 }

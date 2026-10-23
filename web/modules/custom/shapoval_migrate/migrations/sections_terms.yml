@@ -27,7 +27,7 @@ process:
     default_value: full_html
   field_image:
     plugin: shapoval_media
-    source: Icon
+    source: image_url
   field_old_id: ID
   weight: SortOrder
   parent:

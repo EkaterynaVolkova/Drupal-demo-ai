@@ -38,15 +38,12 @@ process:
     migration: sections_terms
     source: ParentID
     no_stub: true
+  # One image: the icon, and if there is none, the picture of the announce.
   field_image:
     plugin: shapoval_media
-    source: Icon
-  field_announce_image:
-    plugin: shapoval_media
-    source: anonceicon
+    source: image_url
   field_external_link/uri: ext_uri
   field_promo: promo
-  field_promo_position: promo_position
   field_sort_order: SortOrder
   field_old_id: ID
   path/alias: alias
