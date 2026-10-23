@@ -1,5 +1,5 @@
 uuid: 2b38cf78-c5c4-4c0a-a959-e46fd9c7af26
-langcode: en
+langcode: ru
 status: true
 dependencies:
   config:
@@ -16,7 +16,7 @@ id: media.document.field_media_document
 field_name: field_media_document
 entity_type: media
 bundle: document
-label: Document
+label: Документ
 description: ''
 required: true
 translatable: true

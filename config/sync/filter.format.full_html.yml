@@ -1,5 +1,5 @@
 uuid: b8a1b610-896a-4368-9eb0-d85167f8ef97
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
     - media
 _core:
   default_config_hash: vpZysv3RHJjhYzq7O_q5q8mVlHdrSzKELmXyiX6RtV0
-name: 'Full HTML'
+name: 'Полный HTML'
 format: full_html
 weight: 2
 filters:

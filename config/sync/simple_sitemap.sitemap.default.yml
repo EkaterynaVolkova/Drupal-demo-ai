@@ -1,5 +1,5 @@
 uuid: d173d01c-1b8d-4d64-934b-a97ce728e140
-langcode: en
+langcode: ru
 status: true
 dependencies:
   config:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: rzLPapRSW-bgTs4MObzlqsqwj5IxPGO9EQZolw2ZzFc
 id: default
-label: Default
-description: 'The default hreflang sitemap - lists URLs to be indexed by modern search engines.'
+label: 'По умолчанию'
+description: 'Карта сайта hreflang по умолчанию — перечисляет URL для индексации современными поисковыми системами.'
 type: default_hreflang
 weight: 0

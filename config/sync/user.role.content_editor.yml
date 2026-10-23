@@ -1,18 +1,18 @@
 uuid: 09548014-3eee-43eb-b7a4-d5f0936cc941
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
     - contextual
     - file
-    - navigation
     - node
     - path
     - system
+    - toolbar
 _core:
   default_config_hash: og55Zu0F-q-X8zG0Ohrls49zws6IrmmosZS-30Es8vw
 id: content_editor
-label: 'Content editor'
+label: 'Редактор контента'
 weight: 2
 is_admin: false
 permissions:
@@ -20,7 +20,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
-  - 'access navigation'
+  - 'access toolbar'
   - 'administer url aliases'
   - 'create url aliases'
   - 'delete own files'

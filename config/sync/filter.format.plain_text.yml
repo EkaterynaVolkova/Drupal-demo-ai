@@ -1,10 +1,10 @@
 uuid: 93f30ecb-2988-4520-8fe3-10cfd78eb9c6
-langcode: en
+langcode: ru
 status: true
 dependencies: {  }
 _core:
   default_config_hash: JLMwODO0epnA_H-jFlH9ezVfa5YBJniRv3MmLqYNl_Q
-name: 'Plain text'
+name: 'Простой текст'
 format: plain_text
 weight: 10
 filters:

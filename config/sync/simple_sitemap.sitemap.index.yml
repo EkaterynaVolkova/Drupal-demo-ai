@@ -1,5 +1,5 @@
 uuid: 68a71ef4-466c-40c1-8566-a3d15d076d53
-langcode: en
+langcode: ru
 status: false
 dependencies:
   config:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: WffB95XdMvoUEvymTyLFLB-Q_JnCbbjy9Kj7TvlzN9s
 id: index
-label: 'Sitemap Index'
-description: 'The sitemap index listing all other sitemaps - useful if there are at least two other sitemaps. In most cases this sitemap should be last in the generation queue and set as the default sitemap.'
+label: 'Индекс карт сайта'
+description: 'Индекс карт сайта со списком всех остальных карт сайта — полезен, если есть хотя бы две другие карты сайта. В большинстве случаев эта карта сайта должна быть последней в очереди генерации и назначена картой сайта по умолчанию.'
 type: index
 weight: 1000

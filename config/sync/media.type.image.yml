@@ -1,11 +1,11 @@
 uuid: ff0e807d-d751-47f9-8690-be7fe08cd736
-langcode: en
+langcode: ru
 status: true
 dependencies: {  }
 _core:
   default_config_hash: VWUWqwszm5ZaqT3frIPWjyyVmvmWnWMFRphkVXCl8t0
 id: image
-label: Image
+label: Изображение
 description: 'A locally hosted image file.'
 source: image
 queue_thumbnail_downloads: false

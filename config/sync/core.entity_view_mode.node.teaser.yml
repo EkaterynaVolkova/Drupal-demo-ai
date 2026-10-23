@@ -1,5 +1,5 @@
 uuid: 4731f193-20dc-49d1-be72-0d67c43efda6
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: KgGJDZFpMaz_8bTv6fN1bXS3Qi5LWmRJI9R53kEGsNQ
 id: node.teaser
-label: Teaser
+label: Анонс
 description: ''
 targetEntityType: node
 cache: true

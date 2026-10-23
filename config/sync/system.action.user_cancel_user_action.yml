@@ -1,5 +1,5 @@
 uuid: e323726c-ab0a-421d-a247-5913541cc3bb
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: nvrL9bFilzBvm2bjO9rQnFDpBA7dBBUjShSSt6NS-DU
 id: user_cancel_user_action
-label: 'Cancel the selected user account(s)'
+label: 'Удалить выбранные учётные записи пользователей'
 type: user
 plugin: user_cancel_user_action
 configuration: {  }

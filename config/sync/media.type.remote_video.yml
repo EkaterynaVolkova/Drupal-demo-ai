@@ -1,11 +1,11 @@
 uuid: aa68c418-dd2b-46f8-ac2b-0d8d2e9cfc80
-langcode: en
+langcode: ru
 status: true
 dependencies: {  }
 _core:
   default_config_hash: NsVkvD5RbJS6kL-3uUgn718RpXYxCy8_-mQoS9jUU1U
 id: remote_video
-label: 'Remote video'
+label: 'Внешнее видео'
 description: 'A video hosted on an external site (for example, YouTube or Vimeo).'
 source: 'oembed:video'
 queue_thumbnail_downloads: false

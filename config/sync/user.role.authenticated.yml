@@ -1,5 +1,5 @@
 uuid: 59505bb1-2957-406f-b546-a4bad21e9e50
-langcode: en
+langcode: ru
 status: true
 dependencies:
   config:
@@ -12,7 +12,7 @@ dependencies:
 _core:
   default_config_hash: wkW7P5A53YhGmsgamrmTbfwpZrqdnPYiJdoAZQtdmJg
 id: authenticated
-label: 'Authenticated user'
+label: 'Аутентифицированный пользователь'
 weight: 1
 is_admin: false
 permissions:

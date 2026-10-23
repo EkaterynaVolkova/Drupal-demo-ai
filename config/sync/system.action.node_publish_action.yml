@@ -1,5 +1,5 @@
 uuid: b11156c2-7c62-4448-b4cb-27db1b57f857
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: 2B9uF8NL5gutNKSdPRAhhAsDWFZZG1PJOBmx0aBGd_0
 id: node_publish_action
-label: 'Publish content'
+label: 'Опубликовать материал'
 type: node
 plugin: 'entity:publish_action:node'
 configuration: {  }

@@ -1,5 +1,5 @@
 uuid: be9ee816-2b90-4d27-816a-e34229dd0bc3
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: VVyUA6PIaVeGtcIbgEWqJ6SYDiJdReBeojFswURFpKs
 id: media_save_action
-label: 'Save media'
+label: 'Сохранить медиа'
 type: media
 plugin: 'entity:save_action:media'
 configuration: {  }

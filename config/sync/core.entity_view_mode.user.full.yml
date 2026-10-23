@@ -1,5 +1,5 @@
 uuid: af748069-25cb-4755-b023-e2ea75ac2418
-langcode: en
+langcode: ru
 status: false
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: ZbXunWS_xAvMZXFfinyvClDAb_RCVLt7gAzE3v16E-Q
 id: user.full
-label: 'User account'
+label: 'Учётная запись пользователя'
 description: ''
 targetEntityType: user
 cache: true

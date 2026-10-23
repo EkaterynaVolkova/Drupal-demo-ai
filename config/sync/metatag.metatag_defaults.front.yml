@@ -1,11 +1,11 @@
 uuid: efbab29d-19c1-4837-99e2-c6fa60c0e25f
-langcode: en
+langcode: ru
 status: true
 dependencies: {  }
 _core:
   default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
 id: front
-label: 'Front page'
+label: 'Главная страница'
 tags:
   canonical_url: '[site:url]'
   shortlink: '[site:url]'

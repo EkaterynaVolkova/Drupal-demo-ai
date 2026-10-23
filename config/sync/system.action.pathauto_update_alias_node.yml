@@ -1,5 +1,5 @@
 uuid: 10f9a3ea-40d7-4a0c-814a-7087ce12223a
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: Cr0CsPUSuio4ClP7bOTqHBefJOLtN5KPyKyYj9E4qvQ
 id: pathauto_update_alias_node
-label: 'Update URL alias'
+label: 'Обновить URL-синоним'
 type: node
 plugin: pathauto_update_alias
 configuration: {  }

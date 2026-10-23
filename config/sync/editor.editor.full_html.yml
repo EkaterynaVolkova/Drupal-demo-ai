@@ -1,5 +1,5 @@
 uuid: c7308351-81fa-4f4a-ba8b-b93533ac55ec
-langcode: en
+langcode: ru
 status: true
 dependencies:
   config:
@@ -40,7 +40,7 @@ settings:
     ckeditor5_codeBlock:
       languages:
         -
-          label: 'Plain text'
+          label: 'Простой текст'
           language: plaintext
         -
           label: C

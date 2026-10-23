@@ -1,5 +1,5 @@
 uuid: eaaa7ec0-1d8d-46bd-9955-ecdf8dd371ed
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: CsK6TseQ2DatEbZgbd30swOlZ28_HHwAESU2LvEnWq0
 id: media_unpublish_action
-label: 'Unpublish media'
+label: 'Снять с публикации медиа'
 type: media
 plugin: 'entity:unpublish_action:media'
 configuration: {  }

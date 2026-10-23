@@ -1,12 +1,12 @@
 uuid: 8c722030-bd30-458f-ac9c-05e674891318
-langcode: en
+langcode: ru
 status: true
 dependencies: {  }
 _core:
   default_config_hash: yaHZPVGZtW3BUvzzdMgc4ed5l4GCiFjcgYlLZmupcqA
 id: default_hreflang
-label: 'Default hreflang'
-description: 'The default hreflang sitemap type. A sitemap of this type is understood by most modern search engines.'
+label: 'Hreflang по умолчанию'
+description: 'Тип карты сайта hreflang по умолчанию. Карты сайта этого типа понятны большинству современных поисковых систем.'
 sitemap_generator: default
 url_generators:
   - custom

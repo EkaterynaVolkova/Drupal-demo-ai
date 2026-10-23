@@ -1,5 +1,5 @@
 uuid: 862948e9-f018-439b-a0cb-70d6cc481974
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: sOb26JSy3fGpWkvR0WYN6_hMqj_6d1rvbvrkzp1yya0
 id: node_make_sticky_action
-label: 'Make content sticky'
+label: 'Закрепить материал вверху списков'
 type: node
 plugin: node_make_sticky_action
 configuration: {  }

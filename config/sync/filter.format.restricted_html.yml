@@ -1,10 +1,10 @@
 uuid: ce741e70-3700-45d4-8c29-a005eb1cc4a4
-langcode: en
+langcode: ru
 status: true
 dependencies: {  }
 _core:
   default_config_hash: QiKqQS_YGAT3Qr4vaAgZICJknm-MGCzt_xBAMqg-tRM
-name: 'Restricted HTML'
+name: 'Ограниченный HTML'
 format: restricted_html
 weight: 1
 filters:

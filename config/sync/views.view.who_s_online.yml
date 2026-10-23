@@ -1,5 +1,5 @@
 uuid: de3fce7b-fc20-416a-a36e-f9551f345800
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ base_field: uid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: 'По умолчанию'
     display_plugin: default
     position: 0
     display_options:
@@ -64,13 +64,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Применить
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
       access:
         type: perm
         options:
@@ -142,7 +142,7 @@ display:
           exposed: false
           expose:
             operator_id: access_op
-            label: 'Last access'
+            label: 'Последнее посещение'
             description: 'A user is considered online for this long after they have last viewed a page.'
             use_operator: false
             operator: access_op

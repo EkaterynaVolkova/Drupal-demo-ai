@@ -1,11 +1,11 @@
 uuid: 11c0d149-b3d1-4f86-a391-2e6e63e42ca3
-langcode: en
+langcode: ru
 status: true
 dependencies: {  }
 _core:
   default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
 id: global
-label: Global
+label: Глобальный
 tags:
   canonical_url: '[current-page:url]'
   title: '[current-page:title] | [site:name]'

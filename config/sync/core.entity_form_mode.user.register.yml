@@ -1,5 +1,5 @@
 uuid: f33e2a7e-b4b1-4117-8118-4ca134028feb
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: 1TFiplNN7Wmj_DtVLLLP-NLPYpZJdAswKY-vTrYgFyo
 id: user.register
-label: Register
+label: Регистрация
 description: null
 targetEntityType: user
 cache: true

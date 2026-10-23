@@ -1,5 +1,5 @@
 uuid: b264a2bc-d2f6-42ba-b029-474a8185f077
-langcode: en
+langcode: ru
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: help_block
 settings:
   id: help_block
-  label: Help
+  label: Справка
   label_display: '0'
   provider: help
 visibility: {  }
