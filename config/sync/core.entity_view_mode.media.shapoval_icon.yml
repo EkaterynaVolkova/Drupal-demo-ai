@@ -1,0 +1,11 @@
+uuid: 18275483-ee1a-4428-b3ed-934307351c60
+langcode: ru
+status: true
+dependencies:
+  module:
+    - media
+id: media.shapoval_icon
+label: 'Иконка в списке'
+description: null
+targetEntityType: media
+cache: true

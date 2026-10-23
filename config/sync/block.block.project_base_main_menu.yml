@@ -1,4 +1,4 @@
-uuid: b48406fd-67ce-4ebc-971b-2968f009f0c7
+uuid: ec3f4628-f46e-46ea-a7f3-e8ab80690fc1
 langcode: en
 status: true
 dependencies:
@@ -8,20 +8,18 @@ dependencies:
     - system
   theme:
     - project_base
-_core:
-  default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
 id: project_base_main_menu
 theme: project_base
-region: primary_menu
+region: sidebar_first
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Main navigation'
+  label: main_menu
   label_display: '0'
   provider: system
   level: 1
-  depth: 2
-  expand_all_items: true
+  depth: 1
+  expand_all_items: false
 visibility: {  }

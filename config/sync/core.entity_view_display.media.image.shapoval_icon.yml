@@ -1,0 +1,33 @@
+uuid: 6f1d3377-4f0a-4ae4-abf8-6058c8d285eb
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.shapoval_icon
+    - field.field.media.image.field_media_image
+    - image.style.shapoval_icon
+    - media.type.image
+  module:
+    - image
+id: media.image.shapoval_icon
+targetEntityType: media
+bundle: image
+mode: shapoval_icon
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: shapoval_icon
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

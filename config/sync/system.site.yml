@@ -11,6 +11,6 @@ page:
   front: /node/1256
 admin_compact_mode: false
 weight_select_max: 100
-default_langcode: en
+default_langcode: ru
 mail_notification: null
 '@front_nid': '1256'

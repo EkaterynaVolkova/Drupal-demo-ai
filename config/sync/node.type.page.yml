@@ -4,8 +4,8 @@ status: true
 dependencies: {  }
 name: Страница
 type: page
-description: null
-help: null
+description: 'Обычная страница сайта: текст, иконка, анонс; привязывается к разделу и (по желанию) к меню.'
+help: 'Раздел определяет, в каком списке появится страница; пункт меню добавляется во вкладке «Настройки меню».'
 new_revision: false
 preview_mode: 0
 display_submitted: false

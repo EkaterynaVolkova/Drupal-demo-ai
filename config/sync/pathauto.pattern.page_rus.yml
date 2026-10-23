@@ -1,0 +1,23 @@
+uuid: 6aead842-d967-4de7-8e44-89bf20d4189c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - node
+id: page_rus
+label: 'Страницы (/rus/…)'
+type: 'canonical_entities:node'
+pattern: '/rus/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+selection_logic: and
+weight: 0
+relationships: {  }

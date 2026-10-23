@@ -25,3 +25,4 @@ hidden:
   field_image: true
   field_old_id: true
   field_teaser: true
+  langcode: true

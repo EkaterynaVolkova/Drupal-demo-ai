@@ -1,0 +1,23 @@
+uuid: 32c7cc69-3e3a-41cd-81b5-838f77404308
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:82259b8d-206e-47ec-bf95-76114fd3a9a6'
+  module:
+    - block_content
+  theme:
+    - project_base
+id: project_base_contacts
+theme: project_base
+region: header_right
+weight: 0
+provider: null
+plugin: 'block_content:82259b8d-206e-47ec-bf95-76114fd3a9a6'
+settings:
+  id: 'block_content:82259b8d-206e-47ec-bf95-76114fd3a9a6'
+  label: Контакты
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

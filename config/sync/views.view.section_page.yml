@@ -3,10 +3,12 @@ langcode: ru
 status: true
 dependencies:
   config:
+    - field.storage.node.field_external_link
     - field.storage.node.field_image
     - field.storage.node.field_teaser
     - views.view.section_children
   module:
+    - link
     - node
     - text
     - user
@@ -26,15 +28,60 @@ display:
     display_options:
       title: Раздел
       fields:
-        field_image:
-          id: field_image
-          table: node__field_image
-          field: field_image
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
           plugin_id: field
           label: ''
-          type: entity_reference_entity_view
+          exclude: true
+          type: number_integer
           settings:
-            view_mode: default
+            thousand_separator: ''
+            prefix_suffix: false
+        field_external_link:
+          id: field_external_link
+          table: node__field_external_link
+          field: field_external_link
+          plugin_id: field
+          label: ''
+          exclude: true
+          type: link_separate
+          settings:
+            trim_length: null
+            url_only: true
+            url_plain: true
+            rel: ''
+            target: ''
+        link_target:
+          id: link_target
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{% if field_external_link %}{{ field_external_link }}{% else %}internal:/node/{{ nid }}{% endif %}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: field
+          label: ''
+          exclude: true
+          type: entity_reference_entity_id
+          settings: {  }
         title:
           id: title
           table: node_field_data
@@ -43,10 +90,45 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
+          alter:
+            alter_text: false
+            make_link: true
+            path: '{{ link_target }}'
           element_type: h3
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: '{{ field_image }}'
+            make_link: true
+            path: '{{ link_target }}'
+          type: entity_reference_entity_view
+          settings:
+            view_mode: shapoval_icon
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          entity_type: node
+          entity_field: created
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: "{% if type|striptags|trim == 'news' %}{{ created }}{% endif %}"
+          hide_alter_empty: true
+          type: timestamp
+          settings:
+            date_format: custom
+            custom_date_format: Y-m-d
+            timezone: ''
         field_teaser:
           id: field_teaser
           table: node__field_teaser
@@ -54,6 +136,24 @@ display:
           plugin_id: field
           label: ''
           type: text_default
+        nid_1:
+          id: nid_1
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: »»»
+            make_link: true
+            path: '{{ link_target }}'
+          element_class: next
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
       pager:
         type: full
         options:
@@ -117,6 +217,18 @@ display:
         type: views_query
         options: {  }
       header:
+        term:
+          id: term
+          table: views
+          field: entity_taxonomy_term
+          entity_type: taxonomy_term
+          plugin_id: entity
+          label: ''
+          empty: true
+          target: '{{ raw_arguments.field_section_target_id }}'
+          view_mode: full
+          tokenize: true
+          bypass_access: false
         children:
           id: children
           table: views
@@ -137,6 +249,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_external_link'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_teaser'
   page_1:
@@ -157,5 +270,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_external_link'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_teaser'

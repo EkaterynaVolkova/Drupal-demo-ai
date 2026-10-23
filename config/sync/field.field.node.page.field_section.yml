@@ -11,7 +11,7 @@ field_name: field_section
 entity_type: node
 bundle: page
 label: Раздел
-description: ''
+description: 'Раздел, в списке которого появится страница. Пусто у страниц верхнего уровня.'
 required: false
 translatable: true
 default_value: {  }

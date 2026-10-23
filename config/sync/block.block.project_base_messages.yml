@@ -1,4 +1,4 @@
-uuid: 10163a2b-9bc8-4ea5-8bff-47dcab66548d
+uuid: 2cc2ce36-1424-4859-afc9-7fbc3ec46ee9
 langcode: en
 status: true
 dependencies:
@@ -6,17 +6,15 @@ dependencies:
     - system
   theme:
     - project_base
-_core:
-  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
 id: project_base_messages
 theme: project_base
-region: highlighted
-weight: -5
+region: content_top
+weight: 2
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: messages
   label_display: '0'
-  provider: system
+  provider: core
 visibility: {  }

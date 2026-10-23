@@ -26,15 +26,6 @@ display:
     display_options:
       title: Подразделы
       fields:
-        field_image:
-          id: field_image
-          table: taxonomy_term__field_image
-          field: field_image
-          plugin_id: field
-          label: ''
-          type: entity_reference_entity_view
-          settings:
-            view_mode: default
         name:
           id: name
           table: taxonomy_term_field_data
@@ -47,6 +38,15 @@ display:
           type: string
           settings:
             link_to_entity: true
+        field_image:
+          id: field_image
+          table: taxonomy_term__field_image
+          field: field_image
+          plugin_id: field
+          label: ''
+          type: entity_reference_entity_view
+          settings:
+            view_mode: shapoval_icon
         field_teaser:
           id: field_teaser
           table: taxonomy_term__field_teaser

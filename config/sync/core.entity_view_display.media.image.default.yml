@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_media_image
-    - image.style.large
+    - image.style.shapoval_content
     - media.type.image
   module:
     - image
@@ -20,7 +20,7 @@ content:
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: large
+      image_style: shapoval_content
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -28,6 +28,7 @@ content:
     region: content
 hidden:
   created: true
+  langcode: true
   name: true
   thumbnail: true
   uid: true

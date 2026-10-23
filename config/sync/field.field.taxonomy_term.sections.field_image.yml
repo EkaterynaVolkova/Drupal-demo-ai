@@ -3,21 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_image
-    - media.type.image
-    - taxonomy.vocabulary.sections
+  - field.storage.taxonomy_term.field_image
+  - media.type.image
+  - taxonomy.vocabulary.sections
 id: taxonomy_term.sections.field_image
 field_name: field_image
 entity_type: taxonomy_term
 bundle: sections
-label: Иконка
-description: ''
+label: Изображение
+description: 'Картинка материала: используется в списках раздела, ленте и карточке анонса на главной.'
 required: false
 translatable: true
-default_value: {  }
+default_value: {}
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: default:media
   handler_settings:
     target_bundles:
       image: image

@@ -10,7 +10,7 @@ field_name: field_promo
 entity_type: node
 bundle: page
 label: 'В анонсах на главной'
-description: ''
+description: 'Показывать в блоке анонсов на главной. Порядок в блоке: новые (по дате создания) выше.'
 required: false
 translatable: true
 default_value: {  }

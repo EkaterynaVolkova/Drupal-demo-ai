@@ -5,12 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
-    - field.field.node.news.field_announce_image
     - field.field.node.news.field_external_link
     - field.field.node.news.field_image
     - field.field.node.news.field_old_id
     - field.field.node.news.field_promo
-    - field.field.node.news.field_promo_position
     - field.field.node.news.field_section
     - field.field.node.news.field_sort_order
     - field.field.node.news.field_teaser
@@ -46,10 +44,9 @@ content:
     region: content
 hidden:
   body: true
-  field_announce_image: true
   field_external_link: true
   field_old_id: true
   field_promo: true
-  field_promo_position: true
   field_section: true
   field_sort_order: true
+  langcode: true

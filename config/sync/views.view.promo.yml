@@ -3,9 +3,11 @@ langcode: ru
 status: true
 dependencies:
   config:
-    - field.storage.node.field_announce_image
+    - field.storage.node.field_external_link
+    - field.storage.node.field_image
     - field.storage.node.field_teaser
   module:
+    - link
     - node
     - text
     - user
@@ -25,15 +27,63 @@ display:
     display_options:
       title: Анонсы
       fields:
-        field_announce_image:
-          id: field_announce_image
-          table: node__field_announce_image
-          field: field_announce_image
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
           plugin_id: field
           label: ''
+          exclude: true
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+        field_external_link:
+          id: field_external_link
+          table: node__field_external_link
+          field: field_external_link
+          plugin_id: field
+          label: ''
+          exclude: true
+          type: link_separate
+          settings:
+            trim_length: null
+            url_only: true
+            url_plain: true
+            rel: ''
+            target: ''
+        link_target:
+          id: link_target
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{% if field_external_link %}{{ field_external_link }}{% else %}internal:/node/{{ nid }}{% endif %}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: '{{ field_image }}'
+            make_link: true
+            path: '{{ link_target }}'
           type: entity_reference_entity_view
           settings:
-            view_mode: default
+            view_mode: shapoval_card
         title:
           id: title
           table: node_field_data
@@ -42,6 +92,7 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
+          exclude: true
           element_type: h3
           type: string
           settings:
@@ -53,6 +104,24 @@ display:
           plugin_id: field
           label: ''
           type: text_default
+        nid_1:
+          id: nid_1
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: »»»
+            make_link: true
+            path: '{{ link_target }}'
+          element_class: next
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
       pager:
         type: none
         options: {  }
@@ -67,12 +136,14 @@ display:
         type: tag
         options: {  }
       sorts:
-        field_sort_order_value:
-          id: field_sort_order_value
-          table: node__field_sort_order
-          field: field_sort_order_value
-          plugin_id: standard
-          order: ASC
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
       filters:
         status:
           id: status
@@ -106,7 +177,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_announce_image'
+        - 'config:field.storage.node.field_external_link'
+        - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_teaser'
   block_promo:
     id: block_promo
@@ -124,5 +196,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_announce_image'
+        - 'config:field.storage.node.field_external_link'
+        - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_teaser'

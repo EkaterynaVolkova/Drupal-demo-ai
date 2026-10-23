@@ -10,7 +10,7 @@ field_name: field_old_id
 entity_type: node
 bundle: news
 label: 'ID на старом сайте'
-description: ''
+description: 'Служебное поле миграции (ID на старом сайте). Не редактируется.'
 required: false
 translatable: true
 default_value: {  }

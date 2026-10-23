@@ -10,10 +10,12 @@ field_name: field_sort_order
 entity_type: node
 bundle: news
 label: 'Порядок в разделе'
-description: ''
+description: 'Для новостей не используется: они идут по дате, новые первыми. Оставьте 0.'
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: 0
 default_value_callback: ''
 settings:
   min: null

@@ -3,17 +3,20 @@ langcode: ru
 status: true
 dependencies:
   config:
+    - field.storage.node.field_external_link
     - field.storage.node.field_image
     - field.storage.node.field_teaser
     - node.type.news
   module:
+    - link
     - node
+    - taxonomy
     - text
     - user
 id: news
 label: Новости
 module: views
-description: ''
+description: 'Блок «Новости» на главной: 10 последних новостей раздела «Новости» (старый id раздела 212). Лента новостей /rus/news это страница раздела (views.view.section_page).'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -26,15 +29,49 @@ display:
     display_options:
       title: Новости
       fields:
-        field_image:
-          id: field_image
-          table: node__field_image
-          field: field_image
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
           plugin_id: field
           label: ''
-          type: entity_reference_entity_view
+          exclude: true
+          type: number_integer
           settings:
-            view_mode: default
+            thousand_separator: ''
+            prefix_suffix: false
+        field_external_link:
+          id: field_external_link
+          table: node__field_external_link
+          field: field_external_link
+          plugin_id: field
+          label: ''
+          exclude: true
+          type: link_separate
+          settings:
+            trim_length: null
+            url_only: true
+            url_plain: true
+            rel: ''
+            target: ''
+        link_target:
+          id: link_target
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{% if field_external_link %}{{ field_external_link }}{% else %}internal:/node/{{ nid }}{% endif %}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
         title:
           id: title
           table: node_field_data
@@ -43,10 +80,28 @@ display:
           entity_field: title
           plugin_id: field
           label: ''
+          alter:
+            alter_text: false
+            make_link: true
+            path: '{{ link_target }}'
           element_type: h3
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: '{{ field_image }}'
+            make_link: true
+            path: '{{ link_target }}'
+          type: entity_reference_entity_view
+          settings:
+            view_mode: shapoval_icon
         created:
           id: created
           table: node_field_data
@@ -58,7 +113,7 @@ display:
           type: timestamp
           settings:
             date_format: custom
-            custom_date_format: d.m.Y
+            custom_date_format: Y-m-d
             timezone: ''
         field_teaser:
           id: field_teaser
@@ -67,10 +122,29 @@ display:
           plugin_id: field
           label: ''
           type: text_default
+        nid_1:
+          id: nid_1
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: »»»
+            make_link: true
+            path: '{{ link_target }}'
+          element_class: next
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
       pager:
-        type: full
+        type: some
         options:
-          items_per_page: 20
+          offset: 0
+          items_per_page: 10
       exposed_form:
         type: basic
         options: {  }
@@ -110,6 +184,22 @@ display:
           value:
             news: news
           group: 1
+        field_old_id_value:
+          id: field_old_id_value
+          table: taxonomy_term__field_old_id
+          field: field_old_id_value
+          relationship: field_section
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: field_old_id
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: '212'
+          group: 1
       style:
         type: default
       row:
@@ -117,31 +207,36 @@ display:
       query:
         type: views_query
         options: {  }
+      relationships:
+        field_section:
+          id: field_section
+          table: node__field_section
+          field: field_section
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: field_section
+          plugin_id: standard
+          required: true
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_external_link'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_teaser'
   block_latest:
     id: block_latest
     display_title: 'Последние новости'
     display_plugin: block
-    position: 2
+    position: 1
     display_options:
-      pager:
-        type: some
-        options:
-          offset: 0
-          items_per_page: 5
-      defaults:
-        pager: false
       display_extenders: {  }
       block_description: 'Последние новости'
     cache_metadata:
@@ -152,24 +247,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_image'
-        - 'config:field.storage.node.field_teaser'
-  page_1:
-    id: page_1
-    display_title: 'Лента новостей'
-    display_plugin: page
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: news
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
+        - 'config:field.storage.node.field_external_link'
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_teaser'

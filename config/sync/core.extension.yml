@@ -20,16 +20,17 @@ module:
   filter: 0
   help: 0
   image: 0
+  language: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
+  locale: 0
   media: 0
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
   migrate: 0
-  migrate_drupal: 0
   migrate_plus: 0
   migrate_tools: 0
   mysql: 0
@@ -50,12 +51,12 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  pathauto: 1
   views: 10
   standard: 1000
 theme:
   olivero: 0
   claro: 0
   project_base: 0
-  project_child: 0
   stark: 0
 profile: standard

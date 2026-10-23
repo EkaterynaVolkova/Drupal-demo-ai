@@ -11,8 +11,8 @@ field_name: field_section
 entity_type: node
 bundle: news
 label: Раздел
-description: ''
-required: false
+description: 'Раздел, в ленте которого появится новость. Выберите «Новости» (верхнего уровня), иначе новость не попадёт в ленту /rus/news и в блок на главной.'
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

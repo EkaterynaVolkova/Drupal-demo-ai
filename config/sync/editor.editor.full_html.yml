@@ -32,6 +32,7 @@ settings:
       - horizontalLine
       - '|'
       - heading
+      - style
       - codeBlock
       - '|'
       - sourceEditing
@@ -97,6 +98,14 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Красный акцент'
+          element: '<span class="hl-red">'
+        -
+          label: 'Синий акцент'
+          element: '<span class="hl-blue">'
 image_upload:
   status: true
   scheme: public
