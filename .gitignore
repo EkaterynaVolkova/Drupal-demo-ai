@@ -1,5 +1,7 @@
 # Composer
 /vendor/
+.htaccess
+docs/
 
 # Drupal
 /web/core/
