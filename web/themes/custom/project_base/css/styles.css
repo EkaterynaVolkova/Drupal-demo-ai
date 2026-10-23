@@ -1,0 +1,244 @@
+/*
+ * Theme styles: the look of the original shapovalov.md site on Drupal markup.
+ * Palette and sizes come from the old stylesheet (xsl/styless.css).
+ *
+ * Contents:
+ *   1. Variables
+ *   2. Base
+ *   3. Layout
+ *   4. Header
+ *   5. Headings bars
+ *   6. Main menu
+ *   7. Breadcrumbs
+ *   8. Document (node body) and legacy markup
+ *   9. Lists of documents (Views) and pager
+ *  10. Left column blocks
+ *  11. Front page announces
+ *  12. Footer
+ *  13. Narrow screens
+ */
+
+/* 1. Variables */
+:root {
+  --c-page-bg: #b6b6b6;
+  --c-text: #333;
+  --c-blue: #057aa6;
+  --c-link: #356aa0;
+  --c-visited: #3f4c6b;
+  --c-hover: #b02b2c;
+  --c-border: #ccc;
+  --c-anonce-bg: #e0eff5;
+  --c-footer-link: #999;
+  --c-footer-hover: #ccc;
+  --c-footer-text: #3190c5;
+  --c-pager-bg: #eee;
+  --site-width: 985px;
+  --side-width: 275px;
+  --main-width: 710px;
+  /* Accents of the old texts (#ff0000 / #0000ff): same hue, contrast >= 4.5:1 on white and on #e0eff5. */
+  --hl-red: #d40000;
+  --hl-blue: #0000e0;
+}
+
+/* 2. Base */
+* { margin: 0; padding: 0; }
+body {
+  background: var(--c-page-bg);
+  color: var(--c-text);
+  font: 64.5% Verdana, Geneva, Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+img { border: 0; max-width: 100%; height: auto; }
+a { color: var(--c-link); }
+a:visited { color: var(--c-visited); }
+a:hover, a:active { color: var(--c-hover); }
+
+/* Accent classes (editor styles "Красный акцент" / "Синий акцент", and the migrated texts). */
+.hl-red { color: var(--hl-red); }
+.hl-blue { color: var(--hl-blue); }
+.text-align-center { text-align: center; }
+.text-align-right { text-align: right; }
+.text-align-justify { text-align: justify; }
+[data-align="left"], .align-left { float: left; margin: 0 1em .5em 0; }
+[data-align="right"], .align-right { float: right; margin: 0 0 .5em 1em; }
+[data-align="center"], .align-center { display: block; margin: 0 auto; text-align: center; }
+
+/* 3. Layout */
+#all { width: var(--site-width); max-width: 100%; margin: 10px auto; }
+#t, #f { font-size: .1em; height: 10px; background: url(../images/site/tbg.gif) top no-repeat; }
+#f { background-image: url(../images/site/fbg.gif); }
+#wrapper { text-align: left; background: url(../images/site/wrbg.gif) repeat-y; overflow: hidden; }
+#header { padding: 0 17px; }
+#container { display: flex; align-items: flex-start; }
+#side-a { flex: 0 0 var(--side-width); width: var(--side-width); }
+#side-b { flex: 0 0 var(--main-width); width: var(--main-width); min-width: 0; }
+#sidea { margin: 0 1px 10px 17px; }
+#sideb { margin: 0 17px 10px 1px; }
+.region-content-top, .region-content, .region-highlighted { padding: 0; }
+.messages { margin: 1em 2em; }
+.tabs { margin: .5em 1em; }
+
+/* 4. Header */
+#lp {
+  display: flex;
+  height: 70px;
+  margin: 5px 0 2px;
+  background: var(--c-blue) url(../images/site/hbg.gif) repeat-x;
+  color: #fff;
+}
+#lp a, #lp a:visited { color: #fff; }
+#lp .a { flex: 0 0 700px; max-width: 100%; }
+#lp .a img { display: block; margin: 1px; max-width: 100%; }
+#lp .b { flex: 0 0 250px; width: 250px; text-align: right; }
+#lp .b p { padding: 7px; margin: 0; }
+#topimage {
+  height: 149px;
+  width: 100%;
+  margin-bottom: 2px;
+  border-top: 1px solid var(--c-blue);
+  border-bottom: 1px solid var(--c-blue);
+  background: url(../images/site/top.jpg) left center no-repeat;
+}
+
+/* 5. Headings bars */
+#sideb .block-page-title-block { margin: 0; }
+/* Drupal's core styles give lists, headings and paragraphs their own margins: reset them explicitly. */
+.ch, #sidea .block > h2, #sideb .block-page-title-block h1 {
+  margin: 0;
+  background: var(--c-blue);
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: .2em .2em .3em 1em;
+}
+.ch a, #sidea .block > h2 a, #sidea .block > h2 a:visited { color: #fff; text-decoration: none; }
+/* The old front page has an empty bar above the announces. */
+body.path-frontpage #sideb::before {
+  content: "\00a0";
+  display: block;
+  background: var(--c-blue);
+  color: #fff;
+  font-size: 1.2em;
+  padding: .2em .2em .3em 1em;
+}
+
+/* 6. Main menu */
+#sidea .block-menu ul, #sidea .block-menu li { margin: 0; padding: 0; list-style: none; }
+#sidea .menu--main li { padding: 1em 0; border-bottom: 1px solid var(--c-border); }
+#sidea .menu--main a { text-decoration: none; font-weight: bold; padding: 0 1em; font-size: 1.1em; color: var(--c-link); }
+#sidea .menu--main a:hover, #sidea .menu--main a.is-active { color: var(--c-hover); }
+#sidea .menu--main ul ul { margin-top: .7em; }
+#sidea .menu--main ul ul li { border: 0; padding: .3em 0 .3em 1em; }
+
+/* 7. Breadcrumbs (old "sitenavigation") */
+#sitenavigation {
+  font-size: 1.1em;
+  margin: 1em 1em 1.5em 1.5em;
+  padding: 0 0 1em;
+  border-bottom: 1px solid var(--c-border);
+  font-weight: bold;
+  line-height: 1.5;
+}
+#sitenavigation a { color: var(--c-link); }
+#sitenavigation span::before { content: " »» "; color: var(--c-text); }
+#sitenavigation span:first-child::before { content: ""; }
+body.path-frontpage #sitenavigation { display: none; }
+
+/* 8. Document (node body) and legacy markup */
+#document, #contentlist, .region-content-top .messages-wrapper { font-size: 1.1em; padding: 5px 1em 10px 2em; }
+#document { text-align: justify; }
+#document p { padding: .7em 0; margin: 0; }
+#document h1 { font-size: 1.2em; padding: 0 0 10px; }
+#document ul, #document ol { margin-left: 3em; }
+#document .date { display: none; }
+#document iframe, #document table { max-width: 100%; }
+/* Embedded media (new articles) are inline like the old <img>; a width in the style attribute sizes the picture. */
+.media { display: inline-block; vertical-align: top; max-width: 100%; }
+.media img { display: block; }
+.media[style*="width"] img { width: 100%; }
+/* Legacy articles keep their <img width height style>; their layout tables must not shrink the pictures. */
+@media (min-width: 821px) { #document td img { max-width: none; } }
+#document td .media:not([style*="width"]) img { width: 150px; max-width: none; }
+
+/* 9. Lists of documents (Views) and pager: old ".post" */
+.view-news .views-row, .view-section-page .views-row, .view-section-children .views-row {
+  margin: 1.5em 2em 0;
+  font-size: 1.1em;
+  overflow: hidden;
+}
+.view-news .views-field-field-image, .view-section-page .views-field-field-image,
+.view-section-children .views-field-field-image { float: left; margin: 0 7px 0 0; }
+.view-news .views-field-field-image img, .view-section-page .views-field-field-image img,
+.view-section-children .views-field-field-image img { border: 1px solid var(--c-border); width: 150px; display: block; }
+.view-news h3, .view-section-page h3, .view-section-children h3 { padding-bottom: .5em; font-size: 1.2em; }
+.view-news h3 a, .view-section-page h3 a, .view-section-children h3 a { text-decoration: none; }
+.view-news .views-field-created { display: block; font-size: .9em; }
+.view-news .views-field-field-teaser p, .view-section-page .views-field-field-teaser p { padding: .3em 0 0; }
+.view-news .views-field-nid-1, .view-section-page .views-field-nid-1 { padding-top: .3em; }
+.view-section-page .view-header .taxonomy-term:has(.content > *) { padding: 5px 2em 10px; font-size: 1.1em; }
+/* News section (old ID 212): documents by date first, sub-folders after them, as on the old site. */
+.section-old-212 .view-section-page { display: flex; flex-direction: column; }
+.section-old-212 .view-section-page > .view-header { order: 2; }
+.section-old-212 .view-section-page > .view-content { order: 1; }
+.section-old-212 .view-section-page > .pager { order: 3; }
+.pager { margin: 1em 0 2em 20px; }
+.pager__items { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+.pager__item a, .pager__item.is-active a {
+  display: block;
+  border: 1px solid var(--c-border);
+  background: var(--c-pager-bg);
+  color: var(--c-text);
+  text-decoration: none;
+  padding: .5em;
+  margin: 0 .1em .1em 0;
+}
+.pager__item.is-active a { background: var(--c-border); font-weight: bold; }
+
+/* 10. Left column blocks */
+#sidea .block-block-content { margin: .7em 0; text-align: center; }
+.block-views-blocknews-block-latest { margin: 1.6em 0; }
+.block-views-blocknews-block-latest .view-news .views-row { display: flex; flex-direction: column; margin: 1.2em .5em; font-size: 1em; overflow: visible; }
+.block-views-blocknews-block-latest .views-field-field-image { display: none; }
+.block-views-blocknews-block-latest .views-field-created { order: 0; }
+.block-views-blocknews-block-latest .views-field-title { order: 1; }
+.block-views-blocknews-block-latest .view-news h3 { padding: 0; font-size: 1.1em; }
+.block-views-blocknews-block-latest .view-news h3 a { text-decoration: underline; }
+.block-views-blocknews-block-latest .views-field-field-teaser { order: 2; }
+.block-views-blocknews-block-latest .views-field-field-teaser p { padding: .3em 0 0; }
+.block-views-blocknews-block-latest .views-field-nid-1 { order: 3; }
+.block-views-blocknews-block-latest .views-field-nid-1 a { font-size: .9em; }
+
+/* 11. Front page announces: old ".centeranonce" (200px cards, 20px gap) */
+.view-promo .view-content { display: flex; flex-wrap: wrap; margin: 1em 10px 0; }
+.view-promo .views-row { width: 200px; height: 320px; margin: 0 20px 22px 0; overflow: hidden; background: var(--c-anonce-bg); }
+.view-promo .views-row:nth-child(3n) { margin-right: 0; }
+.view-promo .views-field-field-image img { width: 176px; height: 140px; object-fit: cover; border: 2px solid #fff; margin: .6em 10px; display: block; }
+.view-promo .views-field-field-teaser { font-size: 1.1em; line-height: 1.3em; padding: 0 10px 10px; }
+.view-promo .views-field-field-teaser p { padding: 0 0 .5em; }
+.view-promo .views-field-nid-1 { padding: 0 10px 10px; font-size: 1.1em; }
+.view-promo .views-field-nid-1 a { font-size: .9em; }
+
+/* 12. Footer */
+#footer { clear: both; padding: 20px; display: flex; align-items: flex-end; gap: 10px 0; }
+#footer a { color: var(--c-footer-hover); }
+.copyright { flex: 0 0 250px; color: var(--c-footer-hover); margin: 0; }
+#botmenu { flex: 1 1 0; min-width: 0; color: var(--c-footer-text); text-align: center; }
+#botmenu ul, #botmenu li { margin: 0; padding: 0; list-style: none; display: inline; }
+#botmenu li + li::before { content: "\00a0|\00a0"; color: var(--c-footer-text); }
+#botmenu a { color: var(--c-footer-link); }
+#botmenu a:hover { color: var(--c-footer-hover); }
+
+/* 13. Narrow screens (an addition: the old site is fixed-width) */
+@media (max-width: 820px) {
+  #container { flex-direction: column; }
+  #side-a, #side-b { flex: none; width: 100%; }
+  #sidea, #sideb { margin: 0 10px 10px; }
+  #lp { flex-direction: column; height: auto; }
+  #lp .a { flex-basis: auto; }
+  #lp .b { flex-basis: auto; width: auto; text-align: left; }
+  #topimage { background-size: cover; height: 100px; }
+  .view-promo .view-content { justify-content: center; }
+  .view-promo .views-row, .view-promo .views-row:nth-child(3n) { width: 100%; max-width: 200px; margin: 0 auto 15px; }
+  #footer { flex-wrap: wrap; }
+  .copyright, #botmenu { flex: 1 1 100%; }
+}

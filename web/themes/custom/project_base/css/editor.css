@@ -1,0 +1,4 @@
+/* Styles of the site shown inside CKEditor 5 (ckeditor5-stylesheets in project_base.info.yml). */
+.ck-content { font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 12px; color: #333; }
+.ck-content .hl-red, .hl-red { color: #d40000; }
+.ck-content .hl-blue, .hl-blue { color: #0000e0; }

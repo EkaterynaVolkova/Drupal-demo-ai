@@ -1,0 +1,10 @@
+{% extends "node.html.twig" %}
+{#
+/**
+ * @file
+ * News: date above the text (as on the old site).
+ */
+#}
+{% block meta %}
+  <span class="date">{{ node.created.value|date('d.m.Y') }}</span>
+{% endblock %}

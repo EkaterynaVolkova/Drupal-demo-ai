@@ -111,3 +111,8 @@ user:
     component:
       css/components/user.css:
         weight: -10
+site:
+  version: 1.0.0
+  css:
+    theme:
+      css/styles.css: {}
