@@ -38,8 +38,10 @@ docs/
 *.sql
 *.sql.gz
 
-# AI assistant files (CLAUDE.md and AGENTS.md are intentionally tracked)
-.claude/
+# AI assistant files (CLAUDE.md, AGENTS.md and shared .claude/ config are intentionally tracked)
+# Claude Code: only personal files stay local
+.claude/settings.local.json
+CLAUDE.local.md
 .cursor/
 .cursorrules
 .cursorignore
