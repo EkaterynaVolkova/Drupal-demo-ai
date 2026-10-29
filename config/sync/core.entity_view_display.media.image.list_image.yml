@@ -1,25 +1,25 @@
-uuid: 6f1d3377-4f0a-4ae4-abf8-6058c8d285eb
+uuid: 58977acb-6fa8-45f3-a887-0e246629fc49
 langcode: ru
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.shapoval_icon
+    - core.entity_view_mode.media.list_image
     - field.field.media.image.field_media_image
-    - image.style.shapoval_icon
+    - image.style.list_image
     - media.type.image
   module:
     - image
-id: media.image.shapoval_icon
+id: media.image.list_image
 targetEntityType: media
 bundle: image
-mode: shapoval_icon
+mode: list_image
 content:
   field_media_image:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
-      image_style: shapoval_icon
+      image_style: list_image
       image_loading:
         attribute: lazy
     third_party_settings: {  }

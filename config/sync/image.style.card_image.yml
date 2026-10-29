@@ -1,12 +1,12 @@
-uuid: d9f8dafc-f429-4c0b-8d1d-cfe5aa63b042
+uuid: ef50f067-619c-4155-9fc7-12f924bd9ef5
 langcode: ru
 status: true
 dependencies: {  }
-name: shapoval_card
+name: card_image
 label: 'Карточка анонса (176×140, обрезка; 2x)'
 effects:
-  cb14a6bb-7d51-4f7e-b5fa-416e433889ad:
-    uuid: cb14a6bb-7d51-4f7e-b5fa-416e433889ad
+  4b472d8c-5fc9-4bf7-9dc3-80783a982ee3:
+    uuid: 4b472d8c-5fc9-4bf7-9dc3-80783a982ee3
     id: image_scale_and_crop
     weight: 1
     data:

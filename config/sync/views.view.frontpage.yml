@@ -30,15 +30,14 @@ display:
         type: full
         options:
           offset: 0
-          pagination_heading_level: h4
           items_per_page: 10
-          total_pages: 0
+          total_pages: null
           id: 0
           tags:
             next: 'Следующая ›'
             previous: '‹ Предыдущая'
-            first: '« Первая'
-            last: 'Последняя »'
+            first: «
+            last: »
           expose:
             items_per_page: false
             items_per_page_label: 'Элементов на страницу'
@@ -46,8 +45,8 @@ display:
             items_per_page_options_all: false
             items_per_page_options_all_label: '- Все -'
             offset: false
-            offset_label: Offset
-          quantity: 9
+            offset_label: Пропустить
+          quantity: 3
       exposed_form:
         type: basic
         options:

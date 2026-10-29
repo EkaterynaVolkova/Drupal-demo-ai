@@ -1,0 +1,15 @@
+uuid: 79a5e01c-5420-4dca-885f-300740854e48
+langcode: ru
+status: true
+dependencies: {  }
+name: content_image
+label: 'Содержимое (до 710 px по ширине)'
+effects:
+  799cfaf5-a5ab-4177-b6c4-f431e0a3b9ff:
+    uuid: 799cfaf5-a5ab-4177-b6c4-f431e0a3b9ff
+    id: image_scale
+    weight: 1
+    data:
+      width: 710
+      height: 4000
+      upscale: false

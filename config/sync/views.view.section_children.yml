@@ -46,7 +46,7 @@ display:
           label: ''
           type: entity_reference_entity_view
           settings:
-            view_mode: shapoval_icon
+            view_mode: list_image
         field_teaser:
           id: field_teaser
           table: taxonomy_term__field_teaser

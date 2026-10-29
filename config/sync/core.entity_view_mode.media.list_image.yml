@@ -1,11 +1,11 @@
-uuid: 97c56f46-f12d-4626-bda6-bb6f45dd267a
+uuid: 9412ad23-e362-4e15-8220-dffee9765d28
 langcode: ru
 status: true
 dependencies:
   module:
     - media
-id: media.shapoval_card
-label: 'Карточка анонса'
+id: media.list_image
+label: 'Картинка в списке'
 description: null
 targetEntityType: media
 cache: true

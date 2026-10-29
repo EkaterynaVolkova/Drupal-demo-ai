@@ -1,25 +1,25 @@
-uuid: e0e39076-c372-4811-a567-10e5997559eb
+uuid: 07dfd6a5-0883-439f-a5d7-3bb8392df318
 langcode: ru
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.shapoval_card
+    - core.entity_view_mode.media.card_image
     - field.field.media.image.field_media_image
-    - image.style.shapoval_card
+    - image.style.card_image
     - media.type.image
   module:
     - image
-id: media.image.shapoval_card
+id: media.image.card_image
 targetEntityType: media
 bundle: image
-mode: shapoval_card
+mode: card_image
 content:
   field_media_image:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
-      image_style: shapoval_card
+      image_style: card_image
       image_loading:
         attribute: lazy
     third_party_settings: {  }

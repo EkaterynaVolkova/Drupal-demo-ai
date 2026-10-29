@@ -9,8 +9,6 @@ display:
           tags:
             next: 'Следующая ›'
             previous: '‹ Предыдущая'
-            first: '« Первая'
-            last: 'Последняя »'
           expose:
             items_per_page_label: 'Элементов на страницу'
             items_per_page_options_all_label: '- Все -'
