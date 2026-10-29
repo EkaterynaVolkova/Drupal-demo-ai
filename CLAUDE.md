@@ -33,7 +33,7 @@ vendor/bin/phpunit -c web/core web/modules/custom/<module>/tests/src/Unit/SomeTe
 - **Custom code** goes in `web/modules/custom/`, `web/themes/custom/`, `web/profiles/custom/`. Recipes live in `recipes/`.
 - **Theme:** `web/themes/custom/project_base` is a standalone theme generated from core Starterkit (a copy owned by the project, no base theme). Edit it directly; see `web/themes/custom/README.md` for reuse, D12 upgrade and regeneration.
 - **Settings are local.** `web/sites/default/settings.php` and `files/` are git-ignored (the DB credentials live in `settings.php`). Use `settings.local.php` for per-environment overrides. Config sync directory is `config/sync` (outside `web/`); it must be set via `$settings['config_sync_directory']` in the local `settings.php` before `drush cex`/`cim`.
-- Database: MariaDB `shapovalov_new` (local credentials in `settings.php`). Install profile: `standard`.
+- Database: MariaDB (name and credentials in the local `settings.php`). Install profile: `standard`.
 - Git: `main` is the stable branch, work happens in `feat/*`/`chore/*` branches via PR (see Git & commits). Remote `origin` = `git@github.com:EkaterynaVolkova/Drupal-demo-ai.git`.
 
 ## Git & commits
@@ -46,9 +46,9 @@ vendor/bin/phpunit -c web/core web/modules/custom/<module>/tests/src/Unit/SomeTe
 
 ## Migration rules (old custom CMS -> Drupal)
 
-- Source: old site in DDEV at `/var/www/shapovalov.loc`, dump `shapoval_main.sql` (not committed). Analysis and plan live in the project files `analysis/shapoval-db-mapping.md` and `analysis/shapoval-migration-plan.md`. Russian only, no ro/en.
+- Source: the old site's content and files; the exact locations are configured locally (see `settings.php` / local notes), not recorded in the repo. Russian only, no other languages.
 - Re-running migrations only after the owner's explicit OK, with a DB backup first. Only `drush migrate:import --update`; never `migrate:rollback` of `media_files` (it deletes files in `uploads/`) and never `--sync`.
-- Do not use "Shapoval" in config names or labels (image styles, views, blocks, text formats). Exception: the `shapoval_migrate` module, its migrations and drush commands.
+- Do not put the old site's name in config names or labels (image styles, views, blocks, text formats). Exception: the custom migrate module, its migrations and drush commands.
 - Never commit `settings*.php`, `files/`, DB dumps, local vhost helpers, or screenshots.
 
 ## Personal and shared Claude config
