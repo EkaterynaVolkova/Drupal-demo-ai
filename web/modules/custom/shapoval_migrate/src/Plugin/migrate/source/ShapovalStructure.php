@@ -86,8 +86,6 @@ class ShapovalStructure extends SqlBase {
     $sdate = (int) $row->getSourceProperty('Sdate');
     $row->setSourceProperty('created_ts', $sdate > 0 ? $sdate : BodyProcessor::FALLBACK_DATE);
     $row->setSourceProperty('promo', $attr & 4 ? 1 : 0);
-    // One image field: the icon first, the picture of the announce if there is no icon.
-    $row->setSourceProperty('image_url', trim($row->getSourceProperty('Icon')) !== '' ? trim($row->getSourceProperty('Icon')) : trim((string) $row->getSourceProperty('anonceicon')));
     $ext = trim($row->getSourceProperty('extlink'));
     $row->setSourceProperty('ext_uri', $ext !== '' ? BodyProcessor::linkUri($ext) : NULL);
     $row->setSourceProperty('link_uri', $ext !== '' ? BodyProcessor::linkUri($ext) : 'internal:/rus/' . $row->getSourceProperty('cpu'));

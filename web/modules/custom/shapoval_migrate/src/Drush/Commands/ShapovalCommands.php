@@ -192,8 +192,8 @@ class ShapovalCommands extends DrushCommands {
    */
   #[CLI\Command(name: 'shapoval:derivatives', aliases: ['shder'])]
   #[CLI\Option(name: 'styles', description: 'Comma-separated image style IDs.')]
-  #[CLI\Usage(name: 'drush shapoval:derivatives', description: 'Create shapoval_content, shapoval_icon and shapoval_card derivatives.')]
-  public function derivatives(array $options = ['styles' => 'shapoval_content,shapoval_icon,shapoval_card']): void {
+  #[CLI\Usage(name: 'drush shapoval:derivatives', description: 'Create content_image, card_image and list_image derivatives.')]
+  public function derivatives(array $options = ['styles' => 'content_image,card_image,list_image']): void {
     $styles = \Drupal::entityTypeManager()->getStorage('image_style')->loadMultiple(array_filter(array_map('trim', explode(',', $options['styles']))));
     $ids = \Drupal::entityQuery('file')->accessCheck(FALSE)->condition('filemime', 'image/%', 'LIKE')->execute();
     $created = 0;

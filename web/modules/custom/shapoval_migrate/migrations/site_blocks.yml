@@ -28,6 +28,10 @@ process:
         - text
         - disclamer
     - plugin: shapoval_body
+    # The address and the street go on one row in the header.
+    - plugin: str_replace
+      search: '<br>str. Petru'
+      replace: ', str. Petru'
   body/format:
     plugin: default_value
     default_value: full_html

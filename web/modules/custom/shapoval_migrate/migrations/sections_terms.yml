@@ -2,6 +2,8 @@ id: sections_terms
 label: 'Sections vocabulary (folders of the old tree)'
 migration_tags: [shapoval]
 source:
+  # Re-runs without --update only touch rows whose source data changed.
+  track_changes: true
   plugin: shapoval_structure
   key: migrate
   kind: folders
@@ -27,7 +29,9 @@ process:
     default_value: full_html
   field_image:
     plugin: shapoval_media
-    source: image_url
+    source:
+      - Icon
+      - anonceicon
   field_old_id: ID
   weight: SortOrder
   parent:

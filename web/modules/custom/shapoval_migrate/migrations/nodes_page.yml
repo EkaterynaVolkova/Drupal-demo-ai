@@ -2,6 +2,8 @@ id: nodes_page
 label: 'Nodes: page'
 migration_tags: [shapoval]
 source:
+  # Re-runs without --update only touch rows whose source data changed.
+  track_changes: true
   plugin: shapoval_structure
   key: migrate
   kind: pages
@@ -38,10 +40,12 @@ process:
     migration: sections_terms
     source: ParentID
     no_stub: true
-  # One image: the icon, and if there is none, the picture of the announce.
+  # One image: the icon; if there is none (or it is an external hot-link without a file), the picture of the announce.
   field_image:
     plugin: shapoval_media
-    source: image_url
+    source:
+      - Icon
+      - anonceicon
   field_external_link/uri: ext_uri
   field_promo: promo
   field_sort_order: SortOrder
