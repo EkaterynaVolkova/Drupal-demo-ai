@@ -1,0 +1,15 @@
+uuid: 9416f31b-3e92-4216-b9b2-75da6cb6c4e0
+langcode: ru
+status: true
+dependencies: {  }
+name: list_image
+label: 'Картинка в списках (ширина 300, пропорции сохраняются)'
+effects:
+  d27e6da3-1a9c-49bf-8eef-33997d731f98:
+    uuid: d27e6da3-1a9c-49bf-8eef-33997d731f98
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: false

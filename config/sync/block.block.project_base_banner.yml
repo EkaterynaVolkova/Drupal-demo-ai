@@ -1,0 +1,23 @@
+uuid: 0e3b8b96-352f-440d-9d27-7e76979a5566
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6ad98248-219d-4cb5-9dba-e3f9c9811758'
+  module:
+    - block_content
+  theme:
+    - project_base
+id: project_base_banner
+theme: project_base
+region: sidebar_first
+weight: 2
+provider: null
+plugin: 'block_content:6ad98248-219d-4cb5-9dba-e3f9c9811758'
+settings:
+  id: 'block_content:6ad98248-219d-4cb5-9dba-e3f9c9811758'
+  label: Баннер
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

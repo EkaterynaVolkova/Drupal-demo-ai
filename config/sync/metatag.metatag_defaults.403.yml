@@ -1,0 +1,12 @@
+uuid: bc047a4d-c122-4930-adbc-e58f3c9f2a64
+langcode: ru
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RDCkFL0NDt75Gwioooxo1iuA1S50xTVsBOgX__c6wTw
+id: '403'
+label: '403 доступ запрещен'
+tags:
+  robots: noindex
+  canonical_url: '[site:url]'
+  shortlink: '[site:url]'

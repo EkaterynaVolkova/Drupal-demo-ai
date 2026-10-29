@@ -1,0 +1,23 @@
+uuid: ae40d73f-7b0b-4eb5-a210-2df0fd2e76dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_id
+    - node.type.news
+id: node.news.field_old_id
+field_name: field_old_id
+entity_type: node
+bundle: news
+label: 'ID на старом сайте'
+description: 'Служебное поле миграции (ID на старом сайте). Не редактируется.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

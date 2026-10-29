@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Image of a Media entity: bare items, no wrapper divs.
+ *
+ * Media is embedded into paragraphs of old documents (<drupal-media> inside
+ * <p> or <a>); block-level wrappers would make the browser split the paragraph
+ * and lose its alignment, so everything here stays inline.
+ */
+#}
+{% for item in items %}{{ item.content }}{% endfor %}

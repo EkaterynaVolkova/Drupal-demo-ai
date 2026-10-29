@@ -1,0 +1,30 @@
+uuid: 09548014-3eee-43eb-b7a4-d5f0936cc941
+langcode: ru
+status: true
+dependencies:
+  module:
+    - contextual
+    - file
+    - node
+    - path
+    - system
+    - toolbar
+_core:
+  default_config_hash: og55Zu0F-q-X8zG0Ohrls49zws6IrmmosZS-30Es8vw
+id: content_editor
+label: 'Редактор контента'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'administer url aliases'
+  - 'create url aliases'
+  - 'delete own files'
+  - 'revert all revisions'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

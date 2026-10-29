@@ -1,0 +1,38 @@
+id: site_banner
+label: 'Block: banner'
+migration_tags: [shapoval]
+source:
+  plugin: shapoval_table
+  key: migrate
+  table: banners
+  id: id
+  constants:
+    open: '<img src="'
+    close: '" alt="">'
+destination:
+  plugin: 'entity:block_content'
+  default_bundle: basic
+process:
+  # Fixed UUID: block.block.project_base_banner refers to it, so the block placement survives a re-run.
+  uuid:
+    plugin: default_value
+    default_value: 6ad98248-219d-4cb5-9dba-e3f9c9811758
+  type:
+    plugin: default_value
+    default_value: basic
+  info:
+    plugin: default_value
+    default_value: 'Баннер'
+  body/value:
+    - plugin: concat
+      source:
+        - constants/open
+        - icon
+        - constants/close
+    - plugin: shapoval_body
+  body/format:
+    plugin: default_value
+    default_value: full_html
+migration_dependencies:
+  required:
+    - media_files

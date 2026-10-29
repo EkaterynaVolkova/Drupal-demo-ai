@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks of project_base.
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_preprocess_page().
+ *
+ * Builds the old site's "sitenavigation" trail from the Sections hierarchy:
+ * Home » parent section » ... » current page.
+ */
+function project_base_preprocess_page(array &$variables): void {
+  $site = \Drupal::config('system.site');
+  $variables['site_name'] = $site->get('name');
+  $variables['site_slogan'] = $site->get('slogan');
+  $variables['site_navigation'] = NULL;
+  $route_match = \Drupal::routeMatch();
+  $term = NULL;
+  $node = NULL;
+  if ($route_match->getRouteName() == 'entity.node.canonical') {
+    $node = $route_match->getParameter('node');
+    if ($node->hasField('field_section') && !$node->get('field_section')->isEmpty()) {
+      $term = $node->get('field_section')->entity;
+    }
+  }
+  elseif ($route_match->getRouteName() == 'entity.taxonomy_term.canonical') {
+    $current = $route_match->getParameter('taxonomy_term');
+    $term = $current ? ($current->get('parent')->entity ?? NULL) : NULL;
+    $node = $current;
+  }
+  if (!$node) {
+    return;
+  }
+  $trail = [];
+  while ($term) {
+    array_unshift($trail, $term);
+    $term = $term->get('parent')->entity;
+  }
+  $items = [['#type' => 'link', '#title' => 'Главная', '#url' => Url::fromRoute('<front>')]];
+  foreach ($trail as $t) {
+    $items[] = ['#type' => 'link', '#title' => $t->label(), '#url' => $t->toUrl()];
+  }
+  $items[] = ['#markup' => $node->label()];
+  $out = [];
+  foreach ($items as $item) {
+    $out[] = ['#type' => 'html_tag', '#tag' => 'span', 'item' => $item];
+  }
+  $variables['site_navigation'] = $out;
+  $variables['#cache']['contexts'][] = 'route';
+  $variables['#cache']['tags'][] = 'taxonomy_term_list';
+}
+
+/**
+ * Implements hook_preprocess_page_title().
+ *
+ * The section page is a view whose title token (%1) is only resolved after
+ * the view has run, which is later than the title block is built.
+ */
+function project_base_preprocess_page_title(array &$variables): void {
+  $route_match = \Drupal::routeMatch();
+  if ($route_match->getRouteName() == 'entity.taxonomy_term.canonical'
+    && ($term = $route_match->getParameter('taxonomy_term'))) {
+    $variables['title'] = $term->label();
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * Adds "section-old-<ID>" (ID of the section in the old CMS) to section pages,
+ * so the theme can order the news section like the old site: documents by date
+ * first, sub-folders after them (folders have no date there).
+ */
+function project_base_preprocess_html(array &$variables): void {
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($term && $term->hasField('field_old_id') && !$term->get('field_old_id')->isEmpty()) {
+    $variables['attributes']['class'][] = 'section-old-' . $term->get('field_old_id')->value;
+    $variables['#cache']['tags'][] = 'taxonomy_term:' . $term->id();
+  }
+  $variables['#cache']['contexts'][] = 'route';
+}

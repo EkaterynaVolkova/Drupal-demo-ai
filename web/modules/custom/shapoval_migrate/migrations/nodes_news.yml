@@ -1,0 +1,63 @@
+id: nodes_news
+label: 'Nodes: news'
+migration_tags: [shapoval]
+source:
+  # Re-runs without --update only touch rows whose source data changed.
+  track_changes: true
+  plugin: shapoval_structure
+  key: migrate
+  kind: news
+destination:
+  plugin: 'entity:node'
+  default_bundle: news
+process:
+  type:
+    plugin: default_value
+    default_value: news
+  title: Head
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+  created: created_ts
+  changed: created_ts
+  body/value:
+    plugin: shapoval_body
+    source: Text
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  field_teaser/value:
+    plugin: shapoval_body
+    source: Descr
+  field_teaser/format:
+    plugin: default_value
+    default_value: full_html
+  field_section:
+    plugin: migration_lookup
+    migration: sections_terms
+    source: ParentID
+    no_stub: true
+  # One image: the icon; if there is none (or it is an external hot-link without a file), the picture of the announce.
+  field_image:
+    plugin: shapoval_media
+    source:
+      - Icon
+      - anonceicon
+  field_external_link/uri: ext_uri
+  field_promo: promo
+  # News are listed by date (newest first), as in the old content.php; the weight stays 0.
+  field_sort_order:
+    plugin: default_value
+    default_value: 0
+  field_old_id: ID
+  path/alias: alias
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+migration_dependencies:
+  required:
+    - media_files
+    - sections_terms

@@ -1,0 +1,20 @@
+uuid: cead0634-73b3-4c3a-8ca1-74338b2bfb0b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - project_base
+id: project_base_local_tasks
+theme: project_base
+region: content_top
+weight: 1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: local_tasks
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

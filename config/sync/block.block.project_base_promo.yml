@@ -1,0 +1,29 @@
+uuid: 2380388f-9f78-4170-8b75-47682551d97a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.promo
+  module:
+    - system
+    - views
+  theme:
+    - project_base
+id: project_base_promo
+theme: project_base
+region: content_top
+weight: 5
+provider: null
+plugin: 'views_block:promo-block_promo'
+settings:
+  id: 'views_block:promo-block_promo'
+  label: promo
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

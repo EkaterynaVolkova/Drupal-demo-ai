@@ -1,0 +1,132 @@
+uuid: 8f33ecaa-7c5c-4a0a-9f2e-97d346c36a33
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_image
+    - field.storage.taxonomy_term.field_teaser
+    - taxonomy.vocabulary.sections
+  module:
+    - taxonomy
+    - text
+    - user
+id: section_children
+label: 'Подразделы раздела'
+module: views
+description: ''
+tag: ''
+base_table: taxonomy_term_field_data
+base_field: tid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Подразделы
+      fields:
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: ''
+          element_type: h3
+          type: string
+          settings:
+            link_to_entity: true
+        field_image:
+          id: field_image
+          table: taxonomy_term__field_image
+          field: field_image
+          plugin_id: field
+          label: ''
+          type: entity_reference_entity_view
+          settings:
+            view_mode: list_image
+        field_teaser:
+          id: field_teaser
+          table: taxonomy_term__field_teaser
+          field: field_teaser
+          plugin_id: field
+          label: ''
+          type: text_default
+      pager:
+        type: none
+        options: {  }
+      exposed_form:
+        type: basic
+        options: {  }
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+      arguments:
+        parent:
+          id: parent
+          table: taxonomy_term__parent
+          field: parent_target_id
+          plugin_id: numeric
+          default_action: 'not found'
+          specify_validation: false
+      filters:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          value:
+            sections: sections
+          group: 1
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_image'
+        - 'config:field.storage.taxonomy_term.field_teaser'
+  embed_1:
+    id: embed_1
+    display_title: Встраиваемый
+    display_plugin: embed
+    position: 1
+    display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - user.permissions
+      tags:
+        - 'config:field.storage.taxonomy_term.field_image'
+        - 'config:field.storage.taxonomy_term.field_teaser'

@@ -1,0 +1,20 @@
+uuid: 3bab54d9-c555-4dcd-a6ca-9bf4741ebfe5
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - project_base
+id: project_base_help
+theme: project_base
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: help
+  label_display: '0'
+  provider: core
+visibility: {  }

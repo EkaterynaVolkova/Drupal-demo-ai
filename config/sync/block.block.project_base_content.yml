@@ -1,0 +1,20 @@
+uuid: 5a431609-cf90-4b34-a267-21c46688c1b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - project_base
+id: project_base_content
+theme: project_base
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: content
+  label_display: '0'
+  provider: core
+visibility: {  }

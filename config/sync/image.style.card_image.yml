@@ -1,0 +1,15 @@
+uuid: ef50f067-619c-4155-9fc7-12f924bd9ef5
+langcode: ru
+status: true
+dependencies: {  }
+name: card_image
+label: 'Карточка анонса (176×140, обрезка; 2x)'
+effects:
+  4b472d8c-5fc9-4bf7-9dc3-80783a982ee3:
+    uuid: 4b472d8c-5fc9-4bf7-9dc3-80783a982ee3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 352
+      height: 280
+      anchor: center-center

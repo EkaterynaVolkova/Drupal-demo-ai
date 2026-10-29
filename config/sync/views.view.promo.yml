@@ -1,0 +1,201 @@
+uuid: 03b4a0a5-c568-417b-80d8-618cf7012244
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_link
+    - field.storage.node.field_image
+    - field.storage.node.field_teaser
+  module:
+    - link
+    - node
+    - text
+    - user
+id: promo
+label: Анонсы
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Анонсы
+      fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          exclude: true
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+        field_external_link:
+          id: field_external_link
+          table: node__field_external_link
+          field: field_external_link
+          plugin_id: field
+          label: ''
+          exclude: true
+          type: link_separate
+          settings:
+            trim_length: null
+            url_only: true
+            url_plain: true
+            rel: ''
+            target: ''
+        link_target:
+          id: link_target
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{% if field_external_link %}{{ field_external_link }}{% else %}internal:/node/{{ nid }}{% endif %}'
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: '{{ field_image }}'
+            make_link: true
+            path: '{{ link_target }}'
+          type: entity_reference_entity_view
+          settings:
+            view_mode: card_image
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          element_type: h3
+          type: string
+          settings:
+            link_to_entity: true
+        field_teaser:
+          id: field_teaser
+          table: node__field_teaser
+          field: field_teaser
+          plugin_id: field
+          label: ''
+          type: text_default
+        nid_1:
+          id: nid_1
+          table: node_field_data
+          field: nid
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          alter:
+            alter_text: true
+            text: »»»
+            make_link: true
+            path: '{{ link_target }}'
+          element_class: next
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+      pager:
+        type: none
+        options: {  }
+      exposed_form:
+        type: basic
+        options: {  }
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        field_promo_value:
+          id: field_promo_value
+          table: node__field_promo
+          field: field_promo_value
+          plugin_id: boolean
+          value: '1'
+          group: 1
+      style:
+        type: default
+      row:
+        type: fields
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_external_link'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_teaser'
+  block_promo:
+    id: block_promo
+    display_title: 'Блок анонсов'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_extenders: {  }
+      block_description: 'Анонсы на главной'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_external_link'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_teaser'

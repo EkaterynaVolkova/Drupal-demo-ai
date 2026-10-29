@@ -1,0 +1,11 @@
+uuid: b3497b9a-ad0a-406d-ab21-68ce81f228b6
+langcode: en
+status: true
+dependencies: {  }
+name: Новость
+type: news
+description: 'Новость: попадает в ленту /rus/news (раздел «Новости») и в блок «Новости» на главной. Новые сверху по дате создания.'
+help: 'Укажите раздел «Новости», анонс и (по желанию) иконку. Дата создания определяет место в ленте.'
+new_revision: false
+preview_mode: 0
+display_submitted: false

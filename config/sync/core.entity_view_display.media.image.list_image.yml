@@ -1,0 +1,33 @@
+uuid: 58977acb-6fa8-45f3-a887-0e246629fc49
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.list_image
+    - field.field.media.image.field_media_image
+    - image.style.list_image
+    - media.type.image
+  module:
+    - image
+id: media.image.list_image
+targetEntityType: media
+bundle: image
+mode: list_image
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: list_image
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

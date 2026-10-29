@@ -1,0 +1,22 @@
+id: site_metatag
+label: 'Front page metatags'
+migration_tags: [shapoval]
+source:
+  plugin: shapoval_table
+  key: migrate
+  table: settings
+  id: ID
+  where:
+    LangID: 1
+destination:
+  plugin: config
+  config_name: metatag.metatag_defaults.front
+process:
+  tags/title:
+    plugin: default_value
+    default_value: '[site:name] | [site:slogan]'
+  tags/description: Keywords
+  tags/keywords: Description
+  tags/canonical_url:
+    plugin: default_value
+    default_value: '[site:url]'

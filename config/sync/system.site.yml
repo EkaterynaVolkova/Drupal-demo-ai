@@ -1,0 +1,16 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: ru
+uuid: 77d05611-f22e-4a1e-99f9-85fe785e82e2
+name: Shapovalov.md
+mail: image_shapovalov@mail.ru
+slogan: 'Центр имиджа, консалтинга и развития человека'
+page:
+  403: ''
+  404: ''
+  front: /node/1256
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: ru
+mail_notification: null
+'@front_nid': '1256'

@@ -1,0 +1,20 @@
+uuid: 2cc2ce36-1424-4859-afc9-7fbc3ec46ee9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - project_base
+id: project_base_messages
+theme: project_base
+region: content_top
+weight: 2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: messages
+  label_display: '0'
+  provider: core
+visibility: {  }

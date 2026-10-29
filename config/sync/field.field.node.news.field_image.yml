@@ -1,0 +1,24 @@
+uuid: d18facbc-4379-47a0-bf4c-af5a1d861c32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.news
+id: node.news.field_image
+field_name: field_image
+entity_type: node
+bundle: news
+label: Изображение
+description: 'Картинка материала: используется в списках раздела, ленте и карточке анонса на главной.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

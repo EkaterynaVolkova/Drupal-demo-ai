@@ -1,0 +1,33 @@
+uuid: 07dfd6a5-0883-439f-a5d7-3bb8392df318
+langcode: ru
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.card_image
+    - field.field.media.image.field_media_image
+    - image.style.card_image
+    - media.type.image
+  module:
+    - image
+id: media.image.card_image
+targetEntityType: media
+bundle: image
+mode: card_image
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: card_image
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

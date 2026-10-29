@@ -1,0 +1,11 @@
+uuid: 9412ad23-e362-4e15-8220-dffee9765d28
+langcode: ru
+status: true
+dependencies:
+  module:
+    - media
+id: media.list_image
+label: 'Картинка в списке'
+description: null
+targetEntityType: media
+cache: true

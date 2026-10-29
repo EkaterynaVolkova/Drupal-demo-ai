@@ -1,0 +1,24 @@
+uuid: 52769bed-9242-46c6-98df-6f43cd4fe114
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - project_base
+id: project_base_page_title
+theme: project_base
+region: content_top
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: page_title
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

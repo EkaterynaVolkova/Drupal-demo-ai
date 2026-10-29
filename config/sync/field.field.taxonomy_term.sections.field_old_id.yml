@@ -1,0 +1,23 @@
+uuid: 3e585839-8a26-4403-b0f4-97d4e6a0ccd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_old_id
+    - taxonomy.vocabulary.sections
+id: taxonomy_term.sections.field_old_id
+field_name: field_old_id
+entity_type: taxonomy_term
+bundle: sections
+label: 'ID на старом сайте'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

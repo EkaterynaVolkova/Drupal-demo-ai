@@ -1,0 +1,22 @@
+uuid: 2a4d62bd-bec5-4aa7-8e1f-ddc27775d893
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_teaser
+    - taxonomy.vocabulary.sections
+  module:
+    - text
+id: taxonomy_term.sections.field_teaser
+field_name: field_teaser
+entity_type: taxonomy_term
+bundle: sections
+label: Анонс
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

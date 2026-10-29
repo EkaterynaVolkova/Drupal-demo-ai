@@ -1,0 +1,23 @@
+uuid: 4d82aba9-97eb-4a4e-b8d1-f648fe6f01cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+  module:
+    - node
+id: news_rus
+label: 'Новости (/rus/…)'
+type: 'canonical_entities:node'
+pattern: '/rus/[node:title]'
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      news: news
+selection_logic: and
+weight: 0
+relationships: {  }

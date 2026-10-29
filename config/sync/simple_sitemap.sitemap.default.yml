@@ -1,0 +1,13 @@
+uuid: d173d01c-1b8d-4d64-934b-a97ce728e140
+langcode: ru
+status: true
+dependencies:
+  config:
+    - simple_sitemap.type.default_hreflang
+_core:
+  default_config_hash: rzLPapRSW-bgTs4MObzlqsqwj5IxPGO9EQZolw2ZzFc
+id: default
+label: 'По умолчанию'
+description: 'Карта сайта hreflang по умолчанию — перечисляет URL для индексации современными поисковыми системами.'
+type: default_hreflang
+weight: 0

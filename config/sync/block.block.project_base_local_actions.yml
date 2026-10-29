@@ -1,0 +1,18 @@
+uuid: a748a556-d273-4700-ac55-edfcebc759ef
+langcode: en
+status: true
+dependencies:
+  theme:
+    - project_base
+id: project_base_local_actions
+theme: project_base
+region: content
+weight: 0
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: local_actions
+  label_display: '0'
+  provider: core
+visibility: {  }

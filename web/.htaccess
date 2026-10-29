@@ -1,3 +1,18 @@
+# Legacy URLs of the old shapovalov.md CMS (301 to the current /rus/<cpu> aliases).
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  # /rus/<cpu>/ -> /rus/<cpu>
+  RewriteRule ^rus/(.+[^/])/+$ /rus/$1 [R=301,L]
+  # /rus, /rom, /eng and their language roots -> front page
+  RewriteRule ^(?:rus|rom|eng)/?$ / [R=301,L]
+  # /rom/<cpu> and /eng/<cpu> -> Russian page (the only migrated language)
+  RewriteRule ^(?:rom|eng)/(.+[^/])/*$ /rus/$1 [R=301,L]
+  # /index.php?lang=rus&content=<cpu> -> /rus/<cpu>
+  RewriteCond %{QUERY_STRING} (?:^|&)content=([^&]+)
+  RewriteRule ^index\.php$ /rus/%1? [R=301,L]
+</IfModule>
+
+
 #
 # Apache/PHP/Drupal settings:
 #
@@ -25,12 +40,15 @@ AddEncoding gzip svgz
 # Add correct encoding for webp.
 AddType image/webp .webp
 
-# Most of the following PHP settings cannot be changed at runtime. See
+# PHP settings that cannot be changed at runtime can be set here. See
 # sites/default/default.settings.php and
 # Drupal\Core\DrupalKernel::bootEnvironment() for settings that can be
 # changed at runtime.
 <IfModule mod_php.c>
-  php_value assert.active                   0
+  # It is strongly recommended that you set zend.assertions to 1 on development
+  # machines and to 0 or -1 in production.
+  # See https://www.php.net/manual/en/ini.core.php#ini.zend.assertions
+  php_value zend.assertions 0
 </IfModule>
 
 # Requires mod_expires to be enabled.
